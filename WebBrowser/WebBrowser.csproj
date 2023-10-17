@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Icons\arrow-left-solid.png" />
+    <None Remove="Icons\arrow-right-solid.png" />
+    <None Remove="Icons\home-solid.png" />
+    <None Remove="Icons\search-solid.png" />
+    <None Remove="Icons\stop-solid.png" />
+    <None Remove="Icons\sync-solid.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2088.41" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\arrow-left-solid.png" />
+    <Resource Include="Icons\arrow-right-solid.png" />
+    <Resource Include="Icons\home-solid.png" />
+    <Resource Include="Icons\search-solid.png" />
+    <Resource Include="Icons\stop-solid.png" />
+    <Resource Include="Icons\sync-solid.png" />
+  </ItemGroup>
+
+</Project>
