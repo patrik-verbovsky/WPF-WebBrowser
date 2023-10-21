@@ -12,8 +12,6 @@
             <ColumnDefinition Width="63*"/>
             <ColumnDefinition Width="337*"/>
         </Grid.ColumnDefinitions>
-
-        <Wpf:WebView2 x:Name="web" Margin="0,35,0,0" Width="Auto" Source="https://google.com" Grid.ColumnSpan="2"/>
         <Button x:Name="back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="back_Click" Height="16" Width="16">
             <Button.Content>
                 <Image Source="/Icons/arrow-left-solid.png" Height="12" Width="12"/>
@@ -34,11 +32,21 @@
                 <Image Source="/Icons/home-solid.png" Height="12" Width="12"/>
             </Button.Content>
         </Button>
-        <TextBox x:Name="ab" Margin="94,10,31,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="16"/>
-        <Button x:Name="go" Grid.Column="1" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Click="go_Click" Height="16" Width="16">
+        <TextBox x:Name="ab" Margin="94,10,52,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="16"/>
+        <Button x:Name="go" Grid.Column="1" HorizontalAlignment="Right" Margin="0,10,31,0" VerticalAlignment="Top" Click="go_Click" Height="16" Width="16">
             <Button.Content>
                 <Image Source="/Icons/search-solid.png"/>
             </Button.Content>
         </Button>
+        <Button x:Name="newtab" Grid.Column="1" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Height="16" Width="16" Click="newtab_Click">
+            <Button.Content>
+                <Image Source="/Icons/plus-solid.png"/>
+            </Button.Content>
+        </Button>
+        <TabControl x:Name="tc" Grid.ColumnSpan="2" Margin="0,31,0,0">
+            <TabItem Header="Tab 1">
+                <Wpf:WebView2 x:Name="web" Width="Auto" Source="https://google.com" Grid.ColumnSpan="2" Height="Auto"/>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
