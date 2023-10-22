@@ -3,6 +3,7 @@ using System.Security.Principal;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using Microsoft.Web.WebView2.WinForms;
 using Microsoft.Web.WebView2.Wpf;
 
 namespace WebBrowser
@@ -12,7 +13,7 @@ namespace WebBrowser
     /// </summary>
     public partial class MainWindow : Window
     {
-        public WebView2 tabItem = new WebView2();
+        public Microsoft.Web.WebView2.Wpf.WebView2 tabItem = new Microsoft.Web.WebView2.Wpf.WebView2();
         private int _tabCount = 1;
         public MainWindow()
         {
@@ -30,7 +31,7 @@ namespace WebBrowser
             {
                 Uri value = new UriBuilder(ab.Text).Uri;
 
-                if (tc.SelectedItem is TabItem selectedTab && selectedTab.Content is WebView2 webView)
+                if (tc.SelectedItem is TabItem selectedTab && selectedTab.Content is Microsoft.Web.WebView2.Wpf.WebView2 webView)
                 {
                     webView.Source = value;
                 }
@@ -40,31 +41,68 @@ namespace WebBrowser
         private void newtab_Click(object sender, RoutedEventArgs e)
         {
             _tabCount++;
-
-            WebView2 webView = new WebView2();
+            Microsoft.Web.WebView2.Wpf.WebView2 webView = new Microsoft.Web.WebView2.Wpf.WebView2();
             webView.Source = new Uri("https://google.com");
-
-            TabItem newTab = new TabItem
+            webView.EnsureCoreWebView2Async(null).ContinueWith((task) =>
             {
-                Header = $"Tab {_tabCount}",
-                Content = webView
-            };
+                if (task.IsCompleted)
+                {
+                    TabItem newTab = new TabItem
+                    {
+                        Header = $"Tab {_tabCount}",
+                        Content = webView
+                    };
 
-            tc.Items.Add(newTab);
+                    tc.Items.Add(newTab);
+                }
+            });
         }
         private void back_Click(object sender, RoutedEventArgs e)
         {
-            tabItem.GoBack();
+            if (tc.SelectedItem is TabItem selectedTab)
+            {
+                if (selectedTab.Content is Microsoft.Web.WebView2.Wpf.WebView2 webView)
+                {
+                    if (webView.CoreWebView2.CanGoBack)
+                    {
+                        webView.CoreWebView2.GoBack();
+                    }
+                }
+            }
         }
 
         private void forward_Click(object sender, RoutedEventArgs e)
         {
-            tabItem.GoForward();
+            if (tc.SelectedItem is TabItem selectedTab)
+            {
+                if (selectedTab.Content is Microsoft.Web.WebView2.Wpf.WebView2 webView)
+                {
+                    if (webView.CoreWebView2.CanGoForward)
+                    {
+                        webView.CoreWebView2.GoForward();
+                    }
+                }
+            }
         }
 
         private void refresh_Click(object sender, RoutedEventArgs e)
         {
-            tabItem.Reload();
+            if (tc.SelectedItem is TabItem selectedTab)
+            {
+                if (selectedTab.Content is Microsoft.Web.WebView2.Wpf.WebView2 webView)
+                {
+                    webView.EnsureCoreWebView2Async(null).ContinueWith((task) =>
+                    {
+                        if (task.IsCompleted)
+                        {
+                            Dispatcher.Invoke(() =>
+                            {
+                                webView.CoreWebView2.Reload();
+                            });
+                        }
+                    });
+                }
+            }
         }
 
         private void home_Click(object sender, RoutedEventArgs e)
