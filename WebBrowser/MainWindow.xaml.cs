@@ -43,18 +43,14 @@ namespace WebBrowser
             _tabCount++;
             Microsoft.Web.WebView2.Wpf.WebView2 webView = new Microsoft.Web.WebView2.Wpf.WebView2();
             webView.Source = new Uri("https://google.com");
-            webView.EnsureCoreWebView2Async(null).ContinueWith((task) =>
+            Dispatcher.Invoke(() =>
             {
-                if (task.IsCompleted)
+                TabItem newTab = new TabItem
                 {
-                    TabItem newTab = new TabItem
-                    {
-                        Header = $"Tab {_tabCount}",
-                        Content = webView
-                    };
-
-                    tc.Items.Add(newTab);
-                }
+                    Header = $"Tab {_tabCount}",
+                    Content = webView
+                };
+                tc.Items.Add(newTab);
             });
         }
         private void back_Click(object sender, RoutedEventArgs e)
