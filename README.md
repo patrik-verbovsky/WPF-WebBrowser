@@ -4,6 +4,7 @@
 ### 1.3.0:
 - Bookmarks!
 - "X" close button!
+- Using Fluent UI [(framework used here)](https://github.com/Kinnara/ModernWpf)
 
 - Will be released March 10-13
 
