@@ -5,7 +5,7 @@
 - Bookmarks!
 - "X" close button!
 
-- Will be released February or March
+- Will be released March 10-13
 
 ### 1.2.0:
 - Fixes unfunctional buttons
