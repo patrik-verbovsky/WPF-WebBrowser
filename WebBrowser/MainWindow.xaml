@@ -6,47 +6,56 @@
         xmlns:local="clr-namespace:WebBrowser"
         xmlns:Wpf="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf" x:Class="WebBrowser.MainWindow"
         mc:Ignorable="d"
-        Title="WebView Browser" Height="450" Width="800">
+        Title="WebView Browser" Height="500" Width="950"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        ui:WindowHelper.UseModernWindowStyle="True">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="63*"/>
+
             <ColumnDefinition Width="337*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="back_Click" Height="16" Width="16">
+        <Button x:Name="back" Margin="10,10,0,0" VerticalAlignment="Top" Click="back_Click" Height="32" Width="29">
             <Button.Content>
                 <Image Source="/Icons/arrow-left-solid.png" Height="12" Width="12"/>
             </Button.Content>
         </Button>
-        <Button x:Name="forward" HorizontalAlignment="Left" Margin="31,10,0,0" VerticalAlignment="Top" Click="forward_Click" Height="16" Width="16">
+        <Button x:Name="forward" Margin="44,10,0,0" VerticalAlignment="Top" Click="forward_Click" Height="32" Width="29">
             <Button.Content>
                 <Image Source="/Icons/arrow-right-solid.png" Height="12" Width="12" Visibility="Visible"/>
             </Button.Content>
         </Button>
-        <Button x:Name="refresh" HorizontalAlignment="Left" Margin="52,10,0,0" VerticalAlignment="Top" Click="refresh_Click" Height="16" Width="16">
+        <Button x:Name="refresh" Margin="78,10,0,0" VerticalAlignment="Top" Click="refresh_Click" Height="32" Width="29">
             <Button.Content>
                 <Image Source="/Icons/sync-solid.png"/>
             </Button.Content>
         </Button>
-        <Button x:Name="home" HorizontalAlignment="Left" Margin="73,10,0,0" VerticalAlignment="Top" Click="home_Click" Height="16" Width="16">
+        <Button x:Name="home" Margin="112,10,0,0" VerticalAlignment="Top" Click="home_Click" Height="32" Width="29" Grid.ColumnSpan="2">
             <Button.Content>
                 <Image Source="/Icons/home-solid.png" Height="12" Width="12"/>
             </Button.Content>
         </Button>
-        <TextBox x:Name="ab" Margin="94,10,52,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="16"/>
-        <Button x:Name="go" Grid.Column="1" HorizontalAlignment="Right" Margin="0,10,31,0" VerticalAlignment="Top" Click="go_Click" Height="16" Width="16">
+        <TextBox x:Name="ab" Margin="146,10,135,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="16"/>
+        <Button x:Name="go" Grid.Column="1" HorizontalAlignment="Right" Margin="0,10,103,0" VerticalAlignment="Top" Click="go_Click" Height="32" Width="27">
             <Button.Content>
                 <Image Source="/Icons/search-solid.png"/>
             </Button.Content>
         </Button>
-        <Button x:Name="newtab" Grid.Column="1" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Height="16" Width="16" Click="newtab_Click">
+        <Button x:Name="newtab" Grid.Column="1" HorizontalAlignment="Right" Margin="0,10,72,0" VerticalAlignment="Top" Height="32" Width="26" Click="newtab_Click">
             <Button.Content>
                 <Image Source="/Icons/plus-solid.png"/>
             </Button.Content>
         </Button>
-        <TabControl x:Name="tc" Grid.ColumnSpan="2" Margin="0,31,0,0">
-            <TabItem Header="Tab 1">
+        <TabControl x:Name="tc" Grid.ColumnSpan="2" Margin="0,47,0,0">
+            <TabItem Header="Karta 1">
                 <Wpf:WebView2 x:Name="web" Width="Auto" Source="https://google.com" Grid.ColumnSpan="2" Height="Auto"/>
             </TabItem>
         </TabControl>
+        <Button x:Name="remtab" Grid.Column="1" HorizontalAlignment="Right" Margin="0,10,41,0" VerticalAlignment="Top" Height="32" Width="26" Click="remtab_Click"
+                >
+            <Image Source="/Icons/times-solid.png"/>
+        </Button>
+        <Button x:Name="back_Kopírovat" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Height="32" Width="26" Grid.Column="1" Click="back_Kopírovat_Click">
+            <Image Source="/Icons/bookmark-solid.png" Height="10" Width="12"/>
+        </Button>
     </Grid>
 </Window>

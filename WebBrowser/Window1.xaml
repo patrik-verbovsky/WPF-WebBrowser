@@ -1,0 +1,16 @@
+﻿<Window x:Class="WebBrowser.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WebBrowser"
+        mc:Ignorable="d"
+        Title="Přidat záložku" x:Name="abkmr" Height="209" Width="400"        xmlns:ui="http://schemas.modernwpf.com/2019"
+        ui:WindowHelper.UseModernWindowStyle="True">
+    <Grid>
+        <Label Content="Adresa webové stránky" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="23" Width="154" FontSize="15"/>
+        <TextBox x:Name="BookmarkURL" Margin="10,38,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button Content="Přidat záložku" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Height="32" Width="110" Click="Button_Click"/>
+        <Label Content="Pozor! Při přidání záložky klikněte na tlačítko refresh! " HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Height="23" Width="353" FontSize="15" RenderTransformOrigin="0.478,-1.103"/>
+    </Grid>
+</Window>

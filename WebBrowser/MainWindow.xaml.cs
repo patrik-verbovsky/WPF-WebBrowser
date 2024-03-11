@@ -1,16 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Security.Principal;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 using Microsoft.Web.WebView2.WinForms;
 using Microsoft.Web.WebView2.Wpf;
+using Windows.UI;
+using Windows.UI.WebUI;
 
 namespace WebBrowser
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
     public partial class MainWindow : Window
     {
         public Microsoft.Web.WebView2.Wpf.WebView2 tabItem = new Microsoft.Web.WebView2.Wpf.WebView2();
@@ -19,7 +25,6 @@ namespace WebBrowser
         {
             InitializeComponent();
         }
-
 
         private void go_Click(object sender, RoutedEventArgs e)
         {
@@ -47,7 +52,7 @@ namespace WebBrowser
             {
                 TabItem newTab = new TabItem
                 {
-                    Header = $"Tab {_tabCount}",
+                    Header = $"Karta {_tabCount}",
                     Content = webView
                 };
                 tc.Items.Add(newTab);
@@ -106,6 +111,20 @@ namespace WebBrowser
             string hmp = "https://google.com";
             Uri hm = new Uri(hmp);
             web.Source = hm;
+        }
+
+        private void remtab_Click(object sender, RoutedEventArgs e)
+        {
+            if (tc.Items.Count > 0)
+            {
+                tc.Items.Remove(tc.SelectedItem);
+            }
+        }
+
+        private void back_Kopírovat_Click(object sender, RoutedEventArgs e)
+        {
+            Window2 bookmark = new Window2();
+            bookmark.Show();
         }
     }
 }

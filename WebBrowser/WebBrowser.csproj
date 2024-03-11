@@ -2,33 +2,96 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net7.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="darkIcons\arrow-left-solid.png" />
+    <None Remove="darkIcons\arrow-right-solid.png" />
+    <None Remove="darkIcons\bookmark-solid.png" />
+    <None Remove="darkIcons\home-solid.png" />
+    <None Remove="darkIcons\plus-solid.png" />
+    <None Remove="darkIcons\search-solid.png" />
+    <None Remove="darkIcons\stop-solid.png" />
+    <None Remove="darkIcons\sync-solid.png" />
+    <None Remove="darkIcons\times-solid.png" />
     <None Remove="Icons\arrow-left-solid.png" />
     <None Remove="Icons\arrow-right-solid.png" />
+    <None Remove="Icons\bookmark-solid.png" />
     <None Remove="Icons\home-solid.png" />
     <None Remove="Icons\plus-solid.png" />
     <None Remove="Icons\search-solid.png" />
     <None Remove="Icons\stop-solid.png" />
     <None Remove="Icons\sync-solid.png" />
+    <None Remove="Icons\times-solid.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2088.41" />
+    <Resource Include="darkIcons\arrow-left-solid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="darkIcons\arrow-right-solid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="darkIcons\bookmark-solid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="darkIcons\home-solid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="darkIcons\plus-solid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="darkIcons\search-solid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="darkIcons\stop-solid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="darkIcons\sync-solid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="darkIcons\times-solid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\times-solid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Icons\arrow-left-solid.png" />
-    <Resource Include="Icons\arrow-right-solid.png" />
-    <Resource Include="Icons\home-solid.png" />
-    <Resource Include="Icons\plus-solid.png" />
-    <Resource Include="Icons\search-solid.png" />
-    <Resource Include="Icons\stop-solid.png" />
-    <Resource Include="Icons\sync-solid.png" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2365.46" />
+    <PackageReference Include="ModernWpfUI" Version="0.9.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\arrow-left-solid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\arrow-right-solid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\bookmark-solid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\home-solid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\plus-solid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\search-solid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\stop-solid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\sync-solid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
