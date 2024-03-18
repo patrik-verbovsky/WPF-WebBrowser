@@ -65,6 +65,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2365.46" />
     <PackageReference Include="ModernWpfUI" Version="0.9.6" />
+    <PackageReference Include="WPF-UI" Version="3.0.1" />
   </ItemGroup>
 
   <ItemGroup>

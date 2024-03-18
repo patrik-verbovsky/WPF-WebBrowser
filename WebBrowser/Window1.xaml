@@ -5,8 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WebBrowser"
         mc:Ignorable="d"
-        Title="Přidat záložku" x:Name="abkmr" Height="209" Width="400"        xmlns:ui="http://schemas.modernwpf.com/2019"
-        ui:WindowHelper.UseModernWindowStyle="True">
+        Title="Přidat záložku" x:Name="abkmr" Height="209" Width="400"        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml">
     <Grid>
         <Label Content="Adresa webové stránky" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="23" Width="154" FontSize="15"/>
         <TextBox x:Name="BookmarkURL" Margin="10,38,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>

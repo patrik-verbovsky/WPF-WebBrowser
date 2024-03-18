@@ -38,9 +38,14 @@ namespace WebBrowser
 
             if (File.Exists(bookmarksFilePath))
             {
-                foreach (string line in File.ReadLines(bookmarksFilePath))
+                using (StreamReader sr = new StreamReader(bookmarksFilePath))
                 {
-                    BookmarkList.Items.Add(line);
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        BookmarkList.Items.Add(line);
+                    }
+                    sr.Close();
                 }
             }
             if (!File.Exists(@"C:\Users\Public\Public Documents\WebBrowser\usersettings\bookmarks.txt"))
@@ -53,7 +58,27 @@ namespace WebBrowser
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            BookmarkList.Items.Refresh();
+            string bookmarksFilePath = @"C:\Users\Public\Public Documents\WebBrowser\usersettings\bookmarks.txt";
+
+            if (File.Exists(bookmarksFilePath))
+            {
+                using (StreamReader sr = new StreamReader(bookmarksFilePath))
+                {
+                    string line;
+                    BookmarkList.Items.Clear();
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        BookmarkList.Items.Add(line);
+                    }
+                    sr.Close();
+                }
+            }
+            if (!File.Exists(@"C:\Users\Public\Public Documents\WebBrowser\usersettings\bookmarks.txt"))
+            {
+                Directory.CreateDirectory(@"C:\Users\Public\Public Documents\WebBrowser\");
+                Directory.CreateDirectory(@"C:\Users\Public\Public Documents\WebBrowser\usersettings\");
+                File.Create(@"C:\Users\Public\Public Documents\WebBrowser\usersettings\bookmarks.txt");
+            }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
