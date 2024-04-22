@@ -85,8 +85,12 @@ namespace WebBrowser
         {
             if (Uri.IsWellFormedUriString(BookmarkList.SelectedItem.ToString(), UriKind.Absolute))
             {
-                Clipboard.SetText(BookmarkList.SelectedItem.ToString());
-                MessageBox.Show("Nyní máš zkopírovanou URL adresu. Aby se ti to zobrazilo, musíš dát CTRL+V v adresovém řádku.");
+                var window1 = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+                if (window1 != null)
+                {
+                    string text = BookmarkList.SelectedItem.ToString();
+                    window1.web.Source = new Uri(text);
+                }
                 
             } else
             {
