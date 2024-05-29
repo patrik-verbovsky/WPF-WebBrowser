@@ -9,18 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="darkIcons\arrow-left-solid.png" />
-    <None Remove="darkIcons\arrow-right-solid.png" />
-    <None Remove="darkIcons\bookmark-solid.png" />
-    <None Remove="darkIcons\home-solid.png" />
-    <None Remove="darkIcons\plus-solid.png" />
-    <None Remove="darkIcons\search-solid.png" />
-    <None Remove="darkIcons\stop-solid.png" />
-    <None Remove="darkIcons\sync-solid.png" />
-    <None Remove="darkIcons\times-solid.png" />
     <None Remove="Icons\arrow-left-solid.png" />
     <None Remove="Icons\arrow-right-solid.png" />
     <None Remove="Icons\bookmark-solid.png" />
+    <None Remove="Icons\cog-solid.png" />
+    <None Remove="Icons\globe-solid.png" />
     <None Remove="Icons\home-solid.png" />
     <None Remove="Icons\plus-solid.png" />
     <None Remove="Icons\search-solid.png" />
@@ -30,31 +23,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="darkIcons\arrow-left-solid.png">
+    <Resource Include="Icons\cog-solid.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="darkIcons\arrow-right-solid.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="darkIcons\bookmark-solid.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="darkIcons\home-solid.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="darkIcons\plus-solid.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="darkIcons\search-solid.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="darkIcons\stop-solid.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="darkIcons\sync-solid.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="darkIcons\times-solid.png">
+    <Resource Include="Icons\globe-solid.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Icons\times-solid.png">

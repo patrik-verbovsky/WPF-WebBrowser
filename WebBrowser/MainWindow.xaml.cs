@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Security.Principal;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
-using System.Windows.Media;
-using Microsoft.Web.WebView2.WinForms;
-using Microsoft.Web.WebView2.Wpf;
-using Windows.UI;
-using Windows.UI.WebUI;
+using System.Xaml;
 
 namespace WebBrowser
 {
@@ -17,20 +10,54 @@ namespace WebBrowser
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     /// 
+
     public partial class MainWindow : Window
     {
         public Microsoft.Web.WebView2.Wpf.WebView2 tabItem = new Microsoft.Web.WebView2.Wpf.WebView2();
         private int _tabCount = 1;
+        public string URLHP;
         public MainWindow()
         {
             InitializeComponent();
+            if (!File.Exists(@"C:\Users\Public\Public Documents\WebBrowser\usersettings\URLHP.txt"))
+            {
+                URLHP = "https://www.google.com/";
+            }
+            else
+if (File.Exists(@"C:\Users\Public\Public Documents\WebBrowser\usersettings\URLHP.txt"))
+            {
+                using (StreamReader sr = new StreamReader(@"C:\Users\Public\Public Documents\WebBrowser\usersettings\URLHP.txt"))
+                {
+                    URLHP = sr.ReadToEnd();
+                    if (sr == null || URLHP == null || URLHP == string.Empty)
+                    {
+                        URLHP = "https://www.google.com/";
+                        web.Source = new Uri("https://www.google.com/");
+                    }
+                    else
+                    {
+                        if (sr == null || URLHP == null || URLHP == string.Empty)
+                        {
+                            URLHP = "https://www.google.com/";
+                            web.Source = new Uri("https://www.google.com/");
+                        }
+                        web.Source = new Uri(URLHP);
+                        URLHP = sr.ReadLine();
+                        sr.Close();
+                    }
+
+
+
+                }
+            }
         }
+
 
         private void go_Click(object sender, RoutedEventArgs e)
         {
             if (String.IsNullOrEmpty(ab.Text))
             {
-                Console.WriteLine("String = empty/null");
+                Console.WriteLine("Není tu nic!");
             }
             else
             {
@@ -38,16 +65,45 @@ namespace WebBrowser
 
                 if (tc.SelectedItem is TabItem selectedTab && selectedTab.Content is Microsoft.Web.WebView2.Wpf.WebView2 webView)
                 {
-                    webView.Source = value;
+                    web.Source = value;
                 }
             }
         }
+
 
         private void newtab_Click(object sender, RoutedEventArgs e)
         {
             _tabCount++;
             Microsoft.Web.WebView2.Wpf.WebView2 webView = new Microsoft.Web.WebView2.Wpf.WebView2();
-            webView.Source = new Uri("https://google.com");
+            if (!File.Exists(@"C:\Users\Public\Public Documents\WebBrowser\usersettings\URLHP.txt"))
+            {
+                URLHP = "https://www.google.com/";
+            }
+            else
+            if (File.Exists(@"C:\Users\Public\Public Documents\WebBrowser\usersettings\URLHP.txt"))
+            {
+                using (StreamReader sr = new StreamReader(@"C:\Users\Public\Public Documents\WebBrowser\usersettings\URLHP.txt"))
+                {
+                    URLHP = sr.ReadToEnd();
+                    if (sr == null || URLHP == null)
+                    {
+                        URLHP = "https://www.google.com/";
+                    }
+                    else
+                    {
+                        sr.Close();
+                    }
+                }
+            }
+            if (URLHP == null || URLHP == string.Empty)
+            {
+                webView.Source = new Uri("https://www.google.com/");
+
+            }
+            else
+            {
+                webView.Source = new Uri(URLHP);
+            }
             Dispatcher.Invoke(() =>
             {
                 TabItem newTab = new TabItem
@@ -108,9 +164,29 @@ namespace WebBrowser
 
         private void home_Click(object sender, RoutedEventArgs e)
         {
-            string hmp = "https://google.com";
-            Uri hm = new Uri(hmp);
-            web.Source = hm;
+            if (!File.Exists(@"C:\Users\Public\Public Documents\WebBrowser\usersettings\URLHP.txt"))
+            {
+                URLHP = "https://www.google.com/";
+            }
+            else
+if (File.Exists(@"C:\Users\Public\Public Documents\WebBrowser\usersettings\URLHP.txt"))
+            {
+                using (StreamReader sr = new StreamReader(@"C:\Users\Public\Public Documents\WebBrowser\usersettings\URLHP.txt"))
+                {
+                    URLHP = sr.ReadToEnd();
+                    if (sr == null || URLHP == null || URLHP == string.Empty)
+                    {
+                        web.Source = new Uri("https://www.google.com/");
+                    }
+                    else
+                    {
+                        web.Source = new Uri(URLHP);
+                        URLHP = sr.ReadLine();
+                        sr.Close();
+                    }
+
+                }
+            }
         }
 
         private void remtab_Click(object sender, RoutedEventArgs e)
@@ -125,6 +201,17 @@ namespace WebBrowser
         {
             Window2 bookmark = new Window2();
             bookmark.Show();
+        }
+
+        private void web_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
+        {
+            ab.Text = web.Source.ToString();
+        }
+
+        private void back_Kopírovat1_Click(object sender, RoutedEventArgs e)
+        {
+            Window3 w3 = new Window3();
+            w3.Show();
         }
     }
 }

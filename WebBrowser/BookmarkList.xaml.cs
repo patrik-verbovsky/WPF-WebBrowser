@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace WebBrowser
 {
@@ -91,8 +81,9 @@ namespace WebBrowser
                     string text = BookmarkList.SelectedItem.ToString();
                     window1.web.Source = new Uri(text);
                 }
-                
-            } else
+
+            }
+            else
             {
                 MessageBox.Show("Nemáš zadanou správnou URL adresu ve formátu http(s)://<adresaurl>.<com/cz apod> !!");
             }

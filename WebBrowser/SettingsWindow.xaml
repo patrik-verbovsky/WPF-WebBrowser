@@ -1,0 +1,17 @@
+﻿<Window x:Class="WebBrowser.Window3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WebBrowser"
+        mc:Ignorable="d"
+        Title="Nastavení" Height="263" Width="800">
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="40" Margin="10,10,0,0" VerticalAlignment="Top" Width="40" Source="/Icons/cog-solid.png"/>
+        <Label Content="Nastavení" HorizontalAlignment="Left" Margin="67,10,0,0" VerticalAlignment="Top" Height="40" Width="333" FontSize="24" FontWeight="Bold" Foreground="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}"/>
+        <TextBox x:Name="urlb" HorizontalAlignment="Left" Margin="166,72,0,0" TextWrapping="Wrap" Text="Tady napište URL ve stylu: http(s)://www.&lt;třeba seznam&gt;.&lt;třeba cz&gt;/" VerticalAlignment="Top" Width="624"/>
+        <Label Content="Homepage - URL adresa" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}"/>
+        <Button Content="Ulož" Margin="10,175,10,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="780" Click="Button_Click"/>
+
+    </Grid>
+</Window>
