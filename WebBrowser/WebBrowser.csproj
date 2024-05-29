@@ -17,6 +17,7 @@
     <None Remove="Icons\home-solid.png" />
     <None Remove="Icons\plus-solid.png" />
     <None Remove="Icons\search-solid.png" />
+    <None Remove="Icons\settingsLarge128.png" />
     <None Remove="Icons\stop-solid.png" />
     <None Remove="Icons\sync-solid.png" />
     <None Remove="Icons\times-solid.png" />
@@ -29,13 +30,16 @@
     <Resource Include="Icons\globe-solid.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Icons\settingsLarge128.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Icons\times-solid.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2420.47" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2535.41" />
     <PackageReference Include="WPF-UI" Version="3.0.4" />
   </ItemGroup>
 

@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="Nastavení" Height="263" Width="800">
     <Grid>
-        <Image HorizontalAlignment="Left" Height="40" Margin="10,10,0,0" VerticalAlignment="Top" Width="40" Source="/Icons/cog-solid.png"/>
-        <Label Content="Nastavení" HorizontalAlignment="Left" Margin="67,10,0,0" VerticalAlignment="Top" Height="40" Width="333" FontSize="24" FontWeight="Bold" Foreground="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}"/>
+        <Image HorizontalAlignment="Left" Height="40" Margin="10,10,0,0" VerticalAlignment="Top" Width="40" Source="/Icons/settingsLarge128.png"/>
+        <Label Content="Nastavení" FontSize="24" HorizontalAlignment="Left" Margin="67,10,0,0" VerticalAlignment="Top" Height="40" Width="333" Foreground="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" FontWeight="Bold"/>
         <TextBox x:Name="urlb" HorizontalAlignment="Left" Margin="166,72,0,0" TextWrapping="Wrap" Text="Tady napište URL ve stylu: http(s)://www.&lt;třeba seznam&gt;.&lt;třeba cz&gt;/" VerticalAlignment="Top" Width="624"/>
         <Label Content="Homepage - URL adresa" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}"/>
         <Button Content="Ulož" Margin="10,175,10,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="780" Click="Button_Click"/>
