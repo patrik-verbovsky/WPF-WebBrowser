@@ -57,7 +57,7 @@ if (File.Exists(@"C:\Users\Public\Public Documents\WebBrowser\usersettings\URLHP
         {
             if (String.IsNullOrEmpty(ab.Text))
             {
-                Console.WriteLine("Není tu nic!");
+                Console.WriteLine("String = empty/null");
             }
             else
             {
@@ -65,7 +65,7 @@ if (File.Exists(@"C:\Users\Public\Public Documents\WebBrowser\usersettings\URLHP
 
                 if (tc.SelectedItem is TabItem selectedTab && selectedTab.Content is Microsoft.Web.WebView2.Wpf.WebView2 webView)
                 {
-                    web.Source = value;
+                    webView.Source = value;
                 }
             }
         }
@@ -176,13 +176,21 @@ if (File.Exists(@"C:\Users\Public\Public Documents\WebBrowser\usersettings\URLHP
                     URLHP = sr.ReadToEnd();
                     if (sr == null || URLHP == null || URLHP == string.Empty)
                     {
-                        web.Source = new Uri("https://www.google.com/");
+                        if (tc.SelectedItem is TabItem selectedTab && selectedTab.Content is Microsoft.Web.WebView2.Wpf.WebView2 webView)
+                        {
+                            webView.Source = new Uri("https://www.google.com/");
+                        }
+                            
                     }
                     else
                     {
-                        web.Source = new Uri(URLHP);
-                        URLHP = sr.ReadLine();
-                        sr.Close();
+                        if (tc.SelectedItem is TabItem selectedTab && selectedTab.Content is Microsoft.Web.WebView2.Wpf.WebView2 webView)
+                        {
+                            webView.Source = new Uri(URLHP);
+                            URLHP = sr.ReadLine();
+                            sr.Close();
+                        }
+                            
                     }
 
                 }

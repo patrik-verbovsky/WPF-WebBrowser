@@ -4,14 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WebBrowser"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         mc:Ignorable="d"
         Title="Nastavení" Height="263" Width="800">
     <Grid>
-        <Image HorizontalAlignment="Left" Height="40" Margin="10,10,0,0" VerticalAlignment="Top" Width="40" Source="/Icons/settingsLarge128.png"/>
-        <Label Content="Nastavení" FontSize="24" HorizontalAlignment="Left" Margin="67,10,0,0" VerticalAlignment="Top" Height="40" Width="333" Foreground="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" FontWeight="Bold"/>
-        <TextBox x:Name="urlb" HorizontalAlignment="Left" Margin="166,72,0,0" TextWrapping="Wrap" Text="Tady napište URL ve stylu: http(s)://www.&lt;třeba seznam&gt;.&lt;třeba cz&gt;/" VerticalAlignment="Top" Width="624"/>
-        <Label Content="Homepage - URL adresa" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}"/>
-        <Button Content="Ulož" Margin="10,175,10,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="780" Click="Button_Click"/>
+        <Label HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" VerticalAlignment="Top" Width="17" Content="{ui:SymbolIcon Settings48, Filled=True}"/>
+        <Label Content="Nastavení" FontSize="24" HorizontalAlignment="Left" Margin="32,8,0,0" VerticalAlignment="Top" Height="22" Width="79" Foreground="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" FontWeight="Bold"/>
+        <TextBox x:Name="urlb" HorizontalAlignment="Left" Margin="166,28,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="624" MinWidth="6"/>
+        <Label Content="Homepage - URL adresa" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}"/>
+        <Button Content="Uložit" Margin="10,10,10,10" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Click="Button_Click"/>
 
     </Grid>
 </Window>

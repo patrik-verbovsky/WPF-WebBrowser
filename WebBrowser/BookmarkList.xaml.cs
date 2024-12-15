@@ -73,19 +73,23 @@ namespace WebBrowser
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+
             if (Uri.IsWellFormedUriString(BookmarkList.SelectedItem.ToString(), UriKind.Absolute))
             {
                 var window1 = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
                 if (window1 != null)
                 {
+                    //Toto nekdy opravit - otvirani pouze v prvnim tabu
+                    Microsoft.Web.WebView2.Wpf.WebView2 webView = new Microsoft.Web.WebView2.Wpf.WebView2();
                     string text = BookmarkList.SelectedItem.ToString();
                     window1.web.Source = new Uri(text);
+                    
                 }
 
             }
             else
             {
-                MessageBox.Show("Nemáš zadanou správnou URL adresu ve formátu http(s)://<adresaurl>.<com/cz apod> !!");
+                MessageBox.Show("Nemáš zadanou správnou URL adresu ve formátu http(s)://<domena>.<TLD>");
             }
         }
     }

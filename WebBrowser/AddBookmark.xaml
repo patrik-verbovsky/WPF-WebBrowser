@@ -10,6 +10,6 @@
         <Label Content="Adresa webové stránky" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="23" Width="154" FontSize="15"/>
         <TextBox x:Name="BookmarkURL" Margin="10,38,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Button Content="Přidat záložku" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Height="32" Width="110" Click="Button_Click"/>
-        <Label Content="Pozor! Při přidání záložky klikněte na tlačítko refresh! " HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Height="23" Width="353" FontSize="15" RenderTransformOrigin="0.478,-1.103"/>
+        <Label Content="Po přidání záložky klikněte &#xD;&#xA;na tlačítko reload" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Bottom" Height="39" Width="280" FontSize="14" RenderTransformOrigin="0.478,-1.103"/>
     </Grid>
 </Window>

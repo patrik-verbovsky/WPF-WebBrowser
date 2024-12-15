@@ -14,51 +14,40 @@
 
             <ColumnDefinition Width="337*"/>
         </Grid.ColumnDefinitions>
-        <ui:Button Padding="0" x:Name="back" Margin="10,10,0,0" VerticalAlignment="Top" Click="back_Click" Height="35" Width="36">
-            <Button.Content>
-                <Image Name="backImage" Source="/Icons/arrow-left-solid.png" Height="18" Width="18"/>
-            </Button.Content>
+        <ui:Button Padding="0" x:Name="back" Margin="10,10,0,0" VerticalAlignment="Top" Click="back_Click" Height="35" Width="36" Content="{ui:SymbolIcon ArrowLeft32}">
+
         </ui:Button>
-        <Button Padding="0" x:Name="forward" Margin="51,10,0,0" VerticalAlignment="Top" Click="forward_Click" Height="35" Width="36">
-            <Button.Content>
-                <Image Name="forwardImage" Source="/Icons/arrow-right-solid.png" Height="18" Width="18" Visibility="Visible"/>
-            </Button.Content>
+        <Button Padding="0" x:Name="forward" Margin="51,10,0,0" VerticalAlignment="Top" Click="forward_Click" Height="35" Width="36" Content="{ui:SymbolIcon ArrowRight32}">
         </Button>
-        <Button Padding="0" x:Name="refresh" Margin="92,10,0,0" VerticalAlignment="Top" Click="refresh_Click" Height="35" Width="36">
-            <Button.Content>
-                <Image Name="refreshImage" Source="/Icons/sync-solid.png" Height="18" Width="18"/>
-            </Button.Content>
+        <Button Padding="0" x:Name="refresh" Margin="92,10,0,0" VerticalAlignment="Top" Click="refresh_Click" Height="35" Width="36" Content="{ui:SymbolIcon ArrowClockwise32}">
+
         </Button>
-        <Button Padding="0" x:Name="home" Margin="133,10,0,0" VerticalAlignment="Top" Click="home_Click" Height="35" Width="36">
-            <Button.Content>
-                <Image Name="homeImage" Source="/Icons/home-solid.png" Height="18" Width="18"/>
-            </Button.Content>
+        <Button Padding="0" x:Name="home" Margin="133,10,0,0" VerticalAlignment="Top" Click="home_Click" Height="35" Width="36" Content="{ui:SymbolIcon Home32}">
+
         </Button>
-        <TextBox x:Name="ab" Margin="174,10,215,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35"/>
-        <Button Padding="0" x:Name="go" HorizontalAlignment="Right" Margin="0,10,174,0" VerticalAlignment="Top" Click="go_Click" Height="35" Width="36">
-            <Button.Content>
-                <Image Name="goImage" Source="/Icons/search-solid.png" Height="18" Width="18"/>
-            </Button.Content>
+        <TextBox x:Name="ab" Margin="174,10,196,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="35"/>
+        <Button Padding="0" x:Name="go" HorizontalAlignment="Right" Margin="0,10,155,0" VerticalAlignment="Top" Click="go_Click" Height="35" Width="36" Content="{ui:SymbolIcon Search32}" Cursor="">
+
         </Button>
-        <Button Padding="0" x:Name="newtab" HorizontalAlignment="Right" Margin="0,10,133,0" VerticalAlignment="Top" Height="35" Width="36" Click="newtab_Click">
-            <Button.Content>
-                <Image Name="newtabImage" Source="/Icons/plus-solid.png" Height="18" Width="18"/>
-            </Button.Content>
-        </Button>
+        <Button Padding="0" x:Name="newtab" HorizontalAlignment="Right" Margin="0,10,114,0" VerticalAlignment="Top" Height="35" Width="36" Click="newtab_Click" Content="{ui:SymbolIcon Add32}"/>
+
         <TabControl x:Name="tc" Margin="0,50,0,0">
             <TabItem Header="Karta 1">
-                <Wpf:WebView2 x:Name="web" Width="Auto" NavigationCompleted="web_NavigationCompleted" Source="https://google.com" Grid.ColumnSpan="2" Height="Auto"/>
+                <Wpf:WebView2 x:Name="web" Width="Auto" NavigationCompleted="web_NavigationCompleted" Source="https://google.com" Grid.ColumnSpan="2" Height="Auto" Margin="0,0,0,0"/>
             </TabItem>
         </TabControl>
-        <Button Padding="0" x:Name="remtab" HorizontalAlignment="Right" Margin="0,10,92,0" VerticalAlignment="Top" Height="35" Width="36" Click="remtab_Click"
-                >
-            <Image Name="remtabImage" Source="/Icons/times-solid.png" Height="18" Width="18"/>
+        <Button Padding="0" x:Name="remtab" HorizontalAlignment="Right" Margin="0,10,73,0" VerticalAlignment="Top" Height="35" Width="36" Click="remtab_Click"
+                Content="{ui:SymbolIcon Delete32}">
+
         </Button>
-        <Button  Padding="0" x:Name="back_Kopírovat" HorizontalAlignment="Right" Margin="0,10,51,0" VerticalAlignment="Top" Height="35" Width="36" Click="back_Kopírovat_Click">
-            <Image  Name="bookmarkImage" Source="/Icons/bookmark-solid.png" Height="18" Width="18"/>
-        </Button>
-        <Button Padding="0" x:Name="back_Kopírovat1" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Height="35" Width="36" Click="back_Kopírovat1_Click">
-            <Image x:Name="bookmarkImage1" Source="/Icons/cog-solid.png" Height="18" Width="18"/>
-        </Button>
+        <ui:DropDownButton Margin="0,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Height="35" Content="{ui:SymbolIcon Settings32}">
+            <ui:DropDownButton.Flyout>
+                <ContextMenu>
+                    <MenuItem Icon="{ui:SymbolIcon BookmarkMultiple32}" Header="Záložky" Click="back_Kopírovat_Click"/>
+                    <MenuItem Icon="{ui:SymbolIcon Settings32}" Header="Nastavení" Click="back_Kopírovat1_Click"/>
+                </ContextMenu>
+            </ui:DropDownButton.Flyout>
+
+        </ui:DropDownButton>
     </Grid>
 </Window>

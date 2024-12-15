@@ -2,72 +2,14 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
+    <TargetFramework>net9.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
-    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Icons\arrow-left-solid.png" />
-    <None Remove="Icons\arrow-right-solid.png" />
-    <None Remove="Icons\bookmark-solid.png" />
-    <None Remove="Icons\cog-solid.png" />
-    <None Remove="Icons\globe-solid.png" />
-    <None Remove="Icons\home-solid.png" />
-    <None Remove="Icons\plus-solid.png" />
-    <None Remove="Icons\search-solid.png" />
-    <None Remove="Icons\settingsLarge128.png" />
-    <None Remove="Icons\stop-solid.png" />
-    <None Remove="Icons\sync-solid.png" />
-    <None Remove="Icons\times-solid.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Icons\cog-solid.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\globe-solid.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\settingsLarge128.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\times-solid.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2535.41" />
-    <PackageReference Include="WPF-UI" Version="3.0.4" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Icons\arrow-left-solid.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\arrow-right-solid.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\bookmark-solid.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\home-solid.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\plus-solid.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\search-solid.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\stop-solid.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\sync-solid.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2903.40" />
+    <PackageReference Include="WPF-UI" Version="3.0.5" />
   </ItemGroup>
 
 </Project>
